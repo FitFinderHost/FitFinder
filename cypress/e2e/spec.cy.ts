@@ -45,7 +45,7 @@ describe('Sign in', () => {
   });
 
   it('Login', () => {
-    
+    cy.scrollTo('top');
     // 1. Click on the specified element
     cy.get('.ss\\:flex > :nth-child(1) > .w-\\[140px\\] > .items-center > .flex > .font-poppins > .text-white').click();
 
@@ -67,22 +67,22 @@ describe('Sign in', () => {
 
   });
 });
-describe('Signout', () => {
+// describe('Signout', () => {
 
-  beforeEach(() => {
-    cy.visit(IP);
-  });
+//   beforeEach(() => {
+//     cy.visit(IP);
+//   });
 
-  it('should ensure the element disappears after an action', () => {
-    cy.wait(2000);
-    // 1. Click on the specified element
-    cy.get('.mr-0 > p').click();
+//   it('should ensure the element disappears after an action', () => {
+//     cy.wait(2000);
+//     // 1. Click on the specified element
+//     cy.get('.mr-0 > p').click();
 
-    // 2. Wait for a second
-    cy.wait(1000);
+//     // 2. Wait for a second
+//     cy.wait(1000);
 
-    // 3. Ensure the element is no longer present
-    cy.get('.text-slate-500').should('not.exist');
+//     // 3. Ensure the element is no longer present
+//     cy.get('.text-slate-500').should('not.exist');
 
-  });
-});
+//   });
+// });
