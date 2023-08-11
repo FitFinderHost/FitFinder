@@ -9,24 +9,23 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-
-      - name: Install Dependencies
-        run: npm i
-        
-      - name: Start Build 
-        run: next build
         
       - name: Start Server 
         uses: cypress-io/github-action@v3
         with:  
+          build: npm run build
           start: npm start
           wait-on: "http://localhost:3000"
-          
-      
-      - name: Run Cypress Tests
-        run: npm run cypress:run
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+
+      - name: Upload Video
+        uses: actions/upload-artifact@v2
+        with:
+          name: cypress-videos
+          path: /home/runner/work/FitFinder/FitFinder/cypress/videos/
+        if: always()
+        
+
