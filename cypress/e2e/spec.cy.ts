@@ -30,6 +30,8 @@ describe('template spec', () => {
   });
 
   it('should open trainer modal when clicked', () => {
+    cy.wait(3000);
+    
     scrollUntilFound(':nth-child(1) > .h-0 > .top-0')
       .then(() => {
         cy.get(':nth-child(1) > .h-0 > .top-0').click();
