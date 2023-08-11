@@ -26,6 +26,7 @@ export default function Trainer({ key, onClick, ...props }) {
   return (
     <a
       onClick={onClick}
+      data-cy="trainer-component"
       className="group rounded overflow-hidden shadow-lg flex flex-col items-center relative"
     >
       <div
