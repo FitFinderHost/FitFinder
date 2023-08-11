@@ -19,7 +19,7 @@ jobs:
         run: npm i
         
       - name: Start Build 
-        run: npm npm run build
+        run: npm run build
         
       - name: Start Server 
       - uses: FitFinder/github-action@v3
