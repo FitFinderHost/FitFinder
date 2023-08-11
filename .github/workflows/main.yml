@@ -22,10 +22,11 @@ jobs:
         run: npm run build
         
       - name: Start Server 
-      - uses: cypress-io/github-action@v3
+        uses: cypress-io/github-action@v3
         with:  
           start: npm start
           wait-on: "http://localhost:3000"
+          
       
       - name: Run Cypress Tests
         run: npm run cypress:run
