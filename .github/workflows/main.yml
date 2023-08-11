@@ -22,6 +22,7 @@ jobs:
         run: npm npm run build
         
       - name: Start Server 
+      - uses: FitFinder/github-action@v3
         with:  
           start: npm start
           wait-on: "http://localhost:3000"
