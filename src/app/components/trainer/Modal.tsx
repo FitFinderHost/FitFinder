@@ -203,6 +203,7 @@ const UserManager: React.FC<TrainerModalProps> = ({
           className="absolute inset-0 bg-black opacity-60"
           style={{ backdropFilter: "blur(5px)" }}
           onClick={handleCloseModel}
+          data-cy="modal-background"
         >
           {" "}
         </div>

@@ -19,7 +19,8 @@ const GetStarted = () => {
             <div
               className={`${styles.flexCenter} flex-col bg-primary w-[100%] h-[100%] rounded-full`}
             >
-              <div className={`${styles.flexStart} flex-row`}>
+              <div className={`${styles.flexStart} flex-row`}
+              data-py="get_started">
                 <p className="font-poppins font-medium text-[18px] leading-[23.4px]">
                   <span className="text-white">Check</span>
                 </p>
