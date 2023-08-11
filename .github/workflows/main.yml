@@ -19,12 +19,12 @@ jobs:
         run: npm i
         
       - name: Start Build 
-        run: npm run build
+        run: next build
         
       - name: Start Server 
         uses: cypress-io/github-action@v3
         with:  
-          start: next build
+          start: npm start
           wait-on: "http://localhost:3000"
           
       
