@@ -18,14 +18,17 @@ jobs:
       - name: Install Dependencies
         run: npm i
         
-      - name: Start Build 
-        run: npm run build
-        
       - name: Start Server 
         uses: cypress-io/github-action@v3
         with:  
+          build: npm build
           start: npm start
           wait-on: "http://localhost:3000"
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.COMMERCE_PROVIDER }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.COMMERCE_PROVIDER }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.COMMERCE_PROVIDER }}
+          
           
       
       - name: Run Cypress Tests
