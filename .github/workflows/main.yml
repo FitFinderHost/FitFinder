@@ -18,8 +18,13 @@ jobs:
       - name: Install Dependencies
         run: npm i
         
+      - name: Start Build 
+        run: npm npm run build
+        
       - name: Start Server 
-        run: npm start &
-
+        with:  
+          start: npm start
+          wait-on: "http://localhost:3000"
+      
       - name: Run Cypress Tests
         run: npm run cypress:run
