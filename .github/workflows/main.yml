@@ -25,5 +25,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: cypress-videos
-          path: /home/runner/work/FitFinder/FitFinder/cypress/videos/
+          path: /cypress
+        if: always()
+        
 
